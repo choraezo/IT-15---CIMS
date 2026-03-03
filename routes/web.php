@@ -11,4 +11,4 @@ Route::get('/', function () {
 
 Route::resource('products', ProductController::class);
 Route::resource('suppliers', SupplierController::class);
-Route::resource('stock-entries', StockEntryController::class)->except(['edit', 'update']);
+Route::resource('stock_entries', StockEntryController::class)->only(['create', 'store', 'index', 'destroy']);

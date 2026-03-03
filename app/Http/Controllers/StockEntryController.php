@@ -37,8 +37,8 @@ class StockEntryController extends Controller
 
          $entry->product->increment('current_stock', $entry->quantity);
 
-        return redirect()->route('stock-entries.index')
-                     ->with('success', "Stock entry recorded! +{$entry->quantity} units added.");
+        return redirect()->route('products.show', $entry->product_id)
+            ->with('success', "Stock entry recorded! +{$entry->quantity} units added.");
     }
 
 
